@@ -31,46 +31,103 @@ Functions are the building block of programs. They are the conceptual unit that 
 -
 
 
+# Setup
+
+1. Summon the Chrome Developer Console (Option + Command + I)
+1. Navigate to the `Sources` tab in the Chrome Developer Console.
+2. Click on the `Snippets` tab within the Sources display.
+3. Right-click and choose `New` to create a new Snippets file.
+4. Name the Snippets File `myFunctions`.
+
+
+
+
 
 ![Ice Cream Sandwich Machine](https://media.giphy.com/media/1kowbKFzLQqXu/giphy.gif)
 
 <em>A **function** is similar to a machine in that it receives an input (ice cream and cookies), processes the input (smash!), and creates a resulting output in a consistent manner (tasty ice cream sandwiches).</em>
 
-Examples of functions:
+# What is a Function?
+A function can be thought of as a program within a larger program.  They often perform small or repetitive tasks.  
 
-- Accept cell phone numbers as input and output the state that phone number comes from.
-- Accept credit card numbers as input and output the credit card company that is associated with the card.
+## Benefits of Using Functions
+
+- **Encapsulation** - Keeping code for the same purpose in the same place makes finding it and updating it easier.
+
+- **Code Reuse** - "Don't Repeat Yourself" (DRY) is a principle of coding - keep your programs DRY! Reusing code makes it easier to change how your program works, since you only have to make updates in one place. If you find yourself writing the same code two or more times, a good rule of thumb is to move it into a function!
 
 
+### Examples of functions:
+
+- Accept cell phone numbers as input and output (return) the state that phone number comes from.
+- Accept credit card numbers as input and output (return) the credit card company that is associated with the card.
+- Accept a string (words, letters, or any type of text) as input and output (return) the same string with all of the A's capitalized.
 
 Once you have **DEFINED** the function you can then repeatedly **CALL** the function to use it over and over.
 
-The function below will display the message `"Hi, everyone!"` to a console.
+The function below will display the message `'Hi, everyone!'` to a console.
 
 ```javascript
     // function definition
     function greetEveryone() {
         // anything inside the curly braces will be executed
-        console.log("Hi, everyone!");
+        console.log('Hi, everyone!');
     }
 ```
 
-The above code is called a *function definition*.  On its own, the function will not execute. It is simply the recipe for "the spell."  The function will need to be *called* by an outside source to initialize and carry out its tasks. You need to "cast the spell" for it to have an impact on the world.  To call a function, the function name and following parenthesis are typed as a statement.
+The above code is called a *function definition*.  On its own, the function will not execute. The function definition is simply the recipe for "the spell."  The function will need to be *called* by an outside source to initialize and carry out its tasks. You need to "cast the spell" for it to have an impact on the context around it.  To call a function, type the function name and trailing parenthesis as a statement.
 
 ```javascript
     // function call
-    greetEveryone(); // Hi, everyone!
+    greetEveryone(); // In the console, you'll see 'Hi, everyone!'
 ```
 
+When a function is *called*, the code from within the definition's curly braces (these -> **`{}`**) will be executed.  It will only be executed when the function is called.
+
+
+# Defining a function with a parameter
+When a function receives a parameter, it will use that value to perform an action. In the function `greetPerson(name)` the function requires that a name value be given to it.  
+
+```javascript
+    // function definition
+    function greetPerson(name) {
+        console.log('Hello ' + name);
+    }
+```
+
+Similar to calling a function without parameters, the function name is called as a statement.  Parameters are passed into the function within the parenthesis.
+
+```javascript
+    // function call
+    greetPerson('Andrea') // The console will print the string 'Hello Andrea'
+    var firstName = 'Jeff';
+    // function call
+    greetPerson(firstName); // The console will print the string 'Hello Jeff'
+```
+
+### Say hello to some students
+Functions can take variables as parameters or Strings
+
+```javascript
+    var name1 = 'Christopher';
+    var name2 = 'Judy';
+    var name3 = 'Noomi';
+
+    // function calls
+    greetPerson(name1); // The console will print the string 'Hello Christopher'
+    greetPerson(name2); // The console will print the string 'Hello Judy'
+    greetPerson(name3); // The console will print the string 'Hello Noomi'
+
+    greetPerson('Will'); // The console will print the string 'Hello Will'
+```
 
 ## Functions with Return Values
-The above function uses `console.log()` to display the result of their internal actions to the screen. `console.log()` is a function for *giving information to the developer* - it shows evidence that something has happened wherever the developer wants to see evidence.  
+The above functions use `console.log()` to display a message to the screen. `console.log()` is a function for *giving information to the developer* - it shows evidence that something has happened wherever the developer wants to see evidence.
 
 Functions also have the ability to *give information to the code* for later use. To do this, we use `return` statements.
 
 ```javascript
     // square a number and return the new value
-
     // function definition
     function square(a) {
       return a * a;
@@ -81,66 +138,15 @@ Functions also have the ability to *give information to the code* for later use.
     var mySquaredValue = square(8);
     console.log(mySquaredValue); // 64
 ```
-The particular function above multiplies the input value by itself and *returns* the resulting product back to the point where it was called.  The variable `mySquaredValue` now stores the *return* value that the function `square(8)` passed it.
+The particular function above multiplies the input value by itself and *returns* (gives) the resulting product to the line where it was called.  The variable `mySquaredValue` now stores the *return* value that the function call `square(8)` output. In this case, the `=` sign is called *assignment*. It assigns a value (whatever value is returned from `square(8)`) to a variable name, `mySquaredValue`. We can then use `mySquaredValue` to refer to that value anywhere in the code instead of needing to call the function over and over again. This is nice, because eventually we'll write much longer functions that we won't want to execute over and over again for fear of eating up processing power.
 
-
-# Setup
-
-1. Summon the Chrome Developer Console (Option + Command + I)
-1. Navigate to the `Sources` tab in the Chrome Developer Console.
-2. Click on the `Snippets` tab within the Sources display.
-3. Right-click and choose `New` to create a new Snippets file.
-4. Name the Snippets File `myFunctions`.
-
-# What is a Function?
-A function can be thought of as a program within a larger program.  They often perform small or repetitive tasks.  When a function is *called*, the code within the curly braces will be executed.  It will only be executed when the function is called.
-
-## Benefits of Using Functions
-
-- **Encapsulation** - Keeping code for the same purpose in the same place makes finding it and updating it easier.
-
-- **Code Reuse** - "Don't Repeat Yourself" (DRY) is a principle of coding - keep your programs DRY! Reusing code makes it easier to change how your program works, since you only have to make updates in one place. If you find yourself writing the same code two or more times, a good rule of thumb is to move it into a function!
-
-
-# Show us a function!
-
-
-# Defining a function with a parameter
-When a function receives a parameter, it will use that value to perform an action. In the function `greetPerson(name)` the function requires that a name variable be given to it.  
-
-```javascript
-    function greetPerson(name) {
-        console.log("Hello " + name);
-    }
-```
-
-Similar to calling a function without parameters, the function name is called as a statement.  Parameters are passed into the function within the parenthesis.
-
-```javascript
-    var name = "Jeff";
-    greetPerson(name); // Hello Jeff
-```
-
-### Say hello to some students
-Functions can take variables as parameters or Strings
-
-```javascript
-    var name1 = "Christopher";
-    var name2 = "Judy";
-    var name3 = "Noomi";
-
-    greetPerson(name1); // Hello Christopher
-    greetPerson(name2); // Hello Judy
-    greetPerson(name3); // Hello Noomi
-
-    greetPerson("Will"); // Hello Will
-```
 ## Defining a function with multiple parameters
 
 Functions can take multiple paramters.  Each parameter must be separated from another by a comma.  
 
 ```javascript
    	// Add two integers
+    // function definition
     function sum(a, b) {
         console.log(a + b);
     }
@@ -148,6 +154,7 @@ Functions can take multiple paramters.  Each parameter must be separated from an
     var x = 6;
     var y = 2;
 
+    // function calls
     sum(x, y); // 8
     sum(2, 3); // 5
     sum(44, 33); // 77
@@ -176,6 +183,8 @@ Functions can take multiple paramters.  Each parameter must be separated from an
     }
 ```
 
+How would you call the above functions?
+
 But what if you want to perform functions on numbers that aren't integers?!  Don't worry; Javascript lumps integers and decimal numbers together in one `number` data type, so your functions will still work if you give them arguments that aren't whole numbers.
 
 
@@ -203,7 +212,7 @@ Functions may perform actions upon Strings as well.
     }
 
     //function call
-    whisper("I AM SMALL"); // i am small
+    whisper('I AM SMALL'); // i am small
 ```
 
 ```javascript
@@ -214,7 +223,7 @@ Functions may perform actions upon Strings as well.
         console.log(phrase + '!');
     }
 
-    var phrase = "Avast, ye mateys";
+    var phrase = 'Avast, ye mateys';
     // function call
     exclaim(phrase); // Avast, ye mateys!
 ```
