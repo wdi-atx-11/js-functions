@@ -11,7 +11,7 @@ Market: SF
 <!-- framing the "why" in big-picture/real world examples -->
 *This workshop is important because:*
 
-Functions are the building block of programs. They are the conceptual unit that will help you transition to thinking like a developer. To think like a developer, begin to think in small tasks that achieve progress one by one. Write a function that performs each of these tasks and make them work together to achieve the larger result.
+Functions are the building block of programs. They are the conceptual unit that will help you transition to thinking like a developer. To think like a developer, begin to think in small tasks that achieve progress one by one. Write a function that performs each of these tasks and make them work together to achieve the larger result. Once you've divided the task into functions, you can just ask the function to perform its task repeatedly with different inputs to get different desired outputs.
 
 ### What are the objectives?
 <!-- specific/measurable goal for students to achieve -->
@@ -28,7 +28,7 @@ Functions are the building block of programs. They are the conceptual unit that 
 
 - write their own JavaScript in a `.js` file and link that file to their HTML (with a `<script>` tag).
 - explain the concept *flow of control* and it's role in running a piece of code.
-- Skill 3
+-
 
 
 
@@ -36,17 +36,55 @@ Functions are the building block of programs. They are the conceptual unit that 
 
 <em>A **function** is similar to a machine in that it receives an input (ice cream and cookies), processes the input (smash!), and creates a resulting output in a consistent manner (tasty ice cream sandwiches).</em>
 
-#Goals
-|   |
-|---|  
-|Create simple Javascript functions with parameters|  
-|Explain difference between returning and printing values|  
-|Demonstrate proper function naming conventions|  
-|Use scope rules to determine which variables will be defined within a function|
+Examples of functions:
+
+- Accept cell phone numbers as input and output the state that phone number comes from.
+- Accept credit card numbers as input and output the credit card company that is associated with the card.
 
 
 
-#Setup
+Once you have **DEFINED** the function you can then repeatedly **CALL** the function to use it over and over.
+
+The function below will display the message `"Hi, everyone!"` to a console.
+
+```javascript
+    // function definition
+    function greetEveryone() {
+        // anything inside the curly braces will be executed
+        console.log("Hi, everyone!");
+    }
+```
+
+The above code is called a *function definition*.  On its own, the function will not execute. It is simply the recipe for "the spell."  The function will need to be *called* by an outside source to initialize and carry out its tasks. You need to "cast the spell" for it to have an impact on the world.  To call a function, the function name and following parenthesis are typed as a statement.
+
+```javascript
+    // function call
+    greetEveryone(); // Hi, everyone!
+```
+
+
+## Functions with Return Values
+The above function uses `console.log()` to display the result of their internal actions to the screen. `console.log()` is a function for *giving information to the developer* - it shows evidence that something has happened wherever the developer wants to see evidence.  
+
+Functions also have the ability to *give information to the code* for later use. To do this, we use `return` statements.
+
+```javascript
+    // square a number and return the new value
+
+    // function definition
+    function square(a) {
+      return a * a;
+    }
+
+    // function call      |
+    //                    V
+    var mySquaredValue = square(8);
+    console.log(mySquaredValue); // 64
+```
+The particular function above multiplies the input value by itself and *returns* the resulting product back to the point where it was called.  The variable `mySquaredValue` now stores the *return* value that the function `square(8)` passed it.
+
+
+# Setup
 
 1. Summon the Chrome Developer Console (Option + Command + I)
 1. Navigate to the `Sources` tab in the Chrome Developer Console.
@@ -54,33 +92,20 @@ Functions are the building block of programs. They are the conceptual unit that 
 3. Right-click and choose `New` to create a new Snippets file.
 4. Name the Snippets File `myFunctions`.
 
-#What is a Function?
-A function can be thought of as a program within a larger program.  They often perform small or repetitious tasks.  When a function is *called*, the code within the curly braces will be executed.  It will only be executed when the function is called.
+# What is a Function?
+A function can be thought of as a program within a larger program.  They often perform small or repetitive tasks.  When a function is *called*, the code within the curly braces will be executed.  It will only be executed when the function is called.
 
-##Benefits of Using Functions
+## Benefits of Using Functions
 
 - **Encapsulation** - Keeping code for the same purpose in the same place makes finding it and updating it easier.
 
-- **Code Reuse** - "Don't Repeat Yourself" is a principle of coding - keep your programs DRY! Reusing code makes it easier to change how your program works, since you only have to make updates in one place. If you find yourself writing the same code two or more times, a good rule of thumb is to move it into a function!
+- **Code Reuse** - "Don't Repeat Yourself" (DRY) is a principle of coding - keep your programs DRY! Reusing code makes it easier to change how your program works, since you only have to make updates in one place. If you find yourself writing the same code two or more times, a good rule of thumb is to move it into a function!
 
 
-#Show us a function!
-The function below will display the message `"Hi, everyone!"` to a console.
+# Show us a function!
 
-```javascript    
-    function greetEveryone() {
-        // anything inside the curly braces will be executed
-        console.log("Hi, everyone!");
-    }
-```
 
-The above code is called a *function definition*.  On its own, the function will not execute.  The function will need to be *called* by an outside source to initialize and carry out its tasks.  To call a function, the function name and following parenthesis are typed as a statement.
-
-```javascript
-    greetEveryone(); // Hi, everyone!
-```
-
-#Defining a function with a parameter
+# Defining a function with a parameter
 When a function receives a parameter, it will use that value to perform an action. In the function `greetPerson(name)` the function requires that a name variable be given to it.  
 
 ```javascript
@@ -96,7 +121,7 @@ Similar to calling a function without parameters, the function name is called as
     greetPerson(name); // Hello Jeff
 ```
 
-###Say hello to some students
+### Say hello to some students
 Functions can take variables as parameters or Strings
 
 ```javascript
@@ -110,7 +135,7 @@ Functions can take variables as parameters or Strings
 
     greetPerson("Will"); // Hello Will
 ```
-##Defining a function with multiple parameters
+## Defining a function with multiple parameters
 
 Functions can take multiple paramters.  Each parameter must be separated from another by a comma.  
 
@@ -128,56 +153,69 @@ Functions can take multiple paramters.  Each parameter must be separated from an
     sum(44, 33); // 77
 ```
 
-##Functions on Integers
+## Functions on Integers
 ```javascript
     // Subtract two integers
     function subtract(a, b) {
         console.log(a - b);
+        return a - b;
     }
 ```
 ``` javascript  
     // Multiply two integers
     function multiply(a, b) {
         console.log(a  *  b);
+        return a * b;
     }
 ```
 ```javascript
     // Divide two integers
     function divide(a, b) {
         console.log(a / b);
+        return a / b;
     }
 ```
 
 But what if you want to perform functions on numbers that aren't integers?!  Don't worry; Javascript lumps integers and decimal numbers together in one `number` data type, so your functions will still work if you give them arguments that aren't whole numbers.
 
 
-##Functions on Strings
+## Functions on Strings
 Functions may perform actions upon Strings as well.
 
 ```javascript
     // convert String to uppercase
+
+    // function definition
     function shout(phrase) {
         console.log(phrase.toUpperCase());
     }
 
     var phrase = 'i am mighty.'
+    // function call
     shout(phrase); // I AM MIGHTY.
 ```
 ```javascript
     // convert String to lowercase
+
+    // function definition
     function whisper(phrase) {
         console.log(phrase.toLowerCase());
     }
 
+    //function call
     whisper("I AM SMALL"); // i am small
 ```
+
 ```javascript
     // append an exclamation point to the end of a phrase
+
+    //function definition
     function exclaim(phrase) {
         console.log(phrase + '!');
     }
 
     var phrase = "Avast, ye mateys";
+    // function call
     exclaim(phrase); // Avast, ye mateys!
 ```
 
@@ -186,13 +224,13 @@ Functions may perform actions upon Strings as well.
  This helps with readability, much like the case with
  variable and file naming conventions.
 
-> **Bad Naming Convention:**
+> **Bad Naming (doesn't follow convention):**
 >
 > * `Squarethesenumbers()`
 > * `CONVERTTOBINARY()`
 > * `pythagoreantheorem()`
 >  
-> **Good Naming Convention:**
+> **Good Naming (follows convention):**
 >
 > * `hexToBinary()`
 > * `determineRootVariant()`
@@ -200,29 +238,19 @@ Functions may perform actions upon Strings as well.
 
 ```javascript
     // convert spaces to dashes in a phrase
+
+    // function definition
     function spacesToDashes(phrase) {
         console.log(phrase.replace(/ /g, "-"));
     }
 
     var phrase = "Dash is also a great API lookup tool!";
+    // function call
     spacesToDashes(phrase); // Dash-is-also-a-great-API-lookup-tool!
 ```
 
 In the case of the function spacesToDashes, the function description 'spaces to dashes' the first letters were capitalized and the phrase was concatenated to 'spacesToDashes'
 
-## Functions with Return Values
-The above functions use console.log() to display the result of their internal actions to the screen.  Functions also have the ability to send results back for later use.
-
-```javascript
-    // square a number and return the new value
-    function square(a) {
-      return a * a;
-    }
-
-    var mySquaredValue = square(8);
-    console.log(mySquaredValue); // 64
-```
-The particular function above multiplies the value it received as a parameter by itself and *returns* the resulting product back to the point where it was called.  The variable `mySquaredValue` now has the *return* value of hte function `square(8)` assigned to it.
 
 
 
@@ -289,8 +317,41 @@ console.log(doYouAgree); // false
 ```
 
 
+Examples of functions:
+- input a cell phone number and output the name of state it's from.
+  function definition:
+  ```js
+    function cellNumberLocator(cellNumber){
+      var location;
+      // pick off the area code of the phone number given
+      // that is, find the first three digits of cellNumber
+      // refer to an API of area codes to find the related state
+      return location;
+    }
+  ```
+  function calls:
+  ```js
+    cellNumberLocator(5055882300);
+    var jennysHomeState = cellNumberLocator(2028675309);
+  ```
+- input a credit card number and output the name of the credit card company that it comes from.
+  function definition:
+  ```js
+    function determineCardCompany(creditCardNumber){
+      var cardCompany;
+      // take the first four digits of creditCardNumber;
+      // refer to a table that associates those four digits with card companies
+      // and store the company name using the variable cardCompany;
+      return cardCompany;
+    }
+  ```
+  function calls:
+  ```js
+    determineCardCompany(4321000011112222);
+    var myCardCompany = determineCardCompany(3400111122223333);
+  ```
 
-##Function Scope
+## Function Scope
 A variable that is declared outside a function definition is a **global** variable, and its value is accessible and modifiable throughout your program. A variable that is declared inside a function definition is **local**.
 
 Functions can access and modify global variables at will.  A program cannot access a function's local variable, however.  By nature, variables declared and defined within a function are created and destroyed as soon as the function starts and stops.  The local variable's data would be impossible to depend on from a source outside of the function.  
@@ -329,7 +390,7 @@ console.log(mult);
 
 
 
-##The Call Stack
+## The Call Stack
 
 We say that a function **takes in arguments** and **returns** something to us. You can imagine JavaScript control flow as a person talking on the phone with your program. When you call a function, it's like JS puts the main program on hold and contacts the function. If another function is called, JS puts the first function on hold to contact the new one. When the function finishes, JS returns to the previous call.
 
@@ -338,7 +399,7 @@ To keep track of the functions JS has on hold, it uses a **call stack**. As JS c
 ![](http://i.stack.imgur.com/4Z6xK.png)
 
 
-##Function Recursion
+## Function Recursion
 
 Function recursion is the act of a function calling itself within its own code.  Traditionally, *recursive* functions require at least one parameter passed in.  Each time a function calls iself, the value of the parameter is changed to produce a desired effect.
 
@@ -363,7 +424,7 @@ countDown(10);
 => 10 9 8 7 6 5 4 3 2 1 0
 ```
 
-###What is this magic?!
+### What is this magic?!
 1.  The code above displays the current value of `num` to the screen then decrements the value by one.  
 2.  It then calls `countdown(num)` again. This time the value has been decremented.  
 3.  Notice that these statements are encapsulated inside an `if` statement.  This creates what is known as a *base case*.  
