@@ -27,7 +27,7 @@ Functions are the building block of programs. They are the conceptual unit that 
 *Before this workshop, developers should already be able to:*
 
 - write their own JavaScript in a `.js` file and link that file to their HTML (with a `<script>` tag).
--
+- explain the concept *flow of control* and it's role in running a piece of code.
 - Skill 3
 
 
