@@ -28,7 +28,7 @@ Functions are the building block of programs. They are the conceptual unit that 
 
 - write their own JavaScript in a `.js` file and link that file to their HTML (with a `<script>` tag).
 - explain the concept *flow of control* and it's role in running a piece of code.
--
+- demonstrate understanding of string, number, and boolean data types in JavaScript.
 
 
 # Setup
@@ -41,14 +41,15 @@ Functions are the building block of programs. They are the conceptual unit that 
 
 
 
-
-
 ![Ice Cream Sandwich Machine](https://media.giphy.com/media/1kowbKFzLQqXu/giphy.gif)
 
 <em>A **function** is similar to a machine in that it receives an input (ice cream and cookies), processes the input (smash!), and creates a resulting output in a consistent manner (tasty ice cream sandwiches).</em>
 
+![image](https://cloud.githubusercontent.com/assets/6520345/17683207/d55e5fda-6305-11e6-93e2-fdd72a87f81a.png)
+
 # What is a Function?
 A function can be thought of as a program within a larger program.  They often perform small or repetitive tasks.  
+
 
 ## Benefits of Using Functions
 
@@ -209,10 +210,11 @@ Functions may perform actions upon Strings as well.
     // function definition
     function whisper(phrase) {
         console.log(phrase.toLowerCase());
+        return phrase.toLowerCase();
     }
 
     //function call
-    whisper('I AM SMALL'); // i am small
+    whisper('I AM SMALL'); // prints and returns the string 'i am small'
 ```
 
 ```javascript
@@ -221,11 +223,12 @@ Functions may perform actions upon Strings as well.
     //function definition
     function exclaim(phrase) {
         console.log(phrase + '!');
+        return phrase;
     }
 
     var phrase = 'Avast, ye mateys';
     // function call
-    exclaim(phrase); // Avast, ye mateys!
+    exclaim(phrase); // prints and returns the string 'Avast, ye mateys!'
 ```
 
 **Note:** When naming Javascript functions, it is best practice to
@@ -251,15 +254,15 @@ Functions may perform actions upon Strings as well.
     // function definition
     function spacesToDashes(phrase) {
         console.log(phrase.replace(/ /g, "-"));
+        return phrase.replace(/ /g, "-");
     }
 
     var phrase = "Dash is also a great API lookup tool!";
     // function call
-    spacesToDashes(phrase); // Dash-is-also-a-great-API-lookup-tool!
+    spacesToDashes(phrase); // prints and returns 'Dash-is-also-a-great-API-lookup-tool!'
 ```
 
-In the case of the function spacesToDashes, the function description 'spaces to dashes' the first letters were capitalized and the phrase was concatenated to 'spacesToDashes'
-
+In the case of the function spacesToDashes, the name describes the function and is in lowerCamelCase (first word not capitalized, other words capitalized with no spaces).
 
 
 
