@@ -20,7 +20,7 @@ Functions are the building block of programs. They are the conceptual unit that 
 - identify the differences between defining a function and calling a function (casting the spell).
 - create a simple function that prints a value (for the user/developer to see a result) and a simple function that returns a value (for the rest of the code to use a result). Distinguish between the impact of these different results.
 - draw a model of a function that includes arguments as input, side effects, and return values as output.
-- begin to explain the concepts of scope and `this` in JavaScript.
+- explain the keyword this in the context of different scopes.
 
 ### Where should we be now?
 <!-- call out the skills that are prerequisites -->
@@ -41,15 +41,19 @@ Functions are the building block of programs. They are the conceptual unit that 
 
 
 
-![Ice Cream Sandwich Machine](https://media.giphy.com/media/1kowbKFzLQqXu/giphy.gif)
 
-<em>A **function** is similar to a machine in that it receives an input (ice cream and cookies), processes the input (smash!), and creates a resulting output in a consistent manner (tasty ice cream sandwiches).</em>
+
+
+
+# What is a Function?
 
 ![image](https://cloud.githubusercontent.com/assets/6520345/17683207/d55e5fda-6305-11e6-93e2-fdd72a87f81a.png)
 
-# What is a Function?
 A function can be thought of as a program within a larger program.  They often perform small or repetitive tasks.  
 
+![Ice Cream Sandwich Machine](https://media.giphy.com/media/1kowbKFzLQqXu/giphy.gif)
+
+<em>A **function** is similar to a machine in that it receives an input (ice cream and cookies), processes the input (smash!), and creates a resulting output in a consistent manner (tasty ice cream sandwiches).</em>
 
 ## Benefits of Using Functions
 
@@ -85,9 +89,8 @@ The above code is called a *function definition*.  On its own, the function will
 
 When a function is *called*, the code from within the definition's curly braces (these -> **`{}`**) will be executed.  It will only be executed when the function is called.
 
-
 # Defining a function with a parameter
-When a function receives a parameter, it will use that value to perform an action. In the function `greetPerson(name)` the function requires that a name value be given to it.  
+When a function requires a parameter, it will use in input value to perform an action. In the function `greetPerson(name)` the function requires that a name value be given to it.  
 
 ```javascript
     // function definition
