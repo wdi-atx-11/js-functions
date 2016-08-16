@@ -20,7 +20,7 @@ Functions are the building block of programs. They are the conceptual unit that 
 - identify the differences between defining a function and calling a function (casting the spell).
 - create a simple function that prints a value (for the user/developer to see a result) and a simple function that returns a value (for the rest of the code to use a result). Distinguish between the impact of these different results.
 - draw a model of a function that includes arguments as input, side effects, and return values as output.
-- explain the keyword this in the context of different scopes.
+- explain the keyword `this` in the context of different scopes.
 
 ### Where should we be now?
 <!-- call out the skills that are prerequisites -->
@@ -29,21 +29,6 @@ Functions are the building block of programs. They are the conceptual unit that 
 - write their own JavaScript in a `.js` file and link that file to their HTML (with a `<script>` tag).
 - explain the concept *flow of control* and it's role in running a piece of code.
 - demonstrate understanding of string, number, and boolean data types in JavaScript.
-
-
-# Setup
-
-1. Summon the Chrome Developer Console (Option + Command + I)
-1. Navigate to the `Sources` tab in the Chrome Developer Console.
-2. Click on the `Snippets` tab within the Sources display.
-3. Right-click and choose `New` to create a new Snippets file.
-4. Name the Snippets File `myFunctions`.
-
-
-
-
-
-
 
 # What is a Function?
 
@@ -68,9 +53,13 @@ A function can be thought of as a program within a larger program.  They often p
 - Accept credit card numbers as input and output (return) the credit card company that is associated with the card.
 - Accept a string (words, letters, or any type of text) as input and output (return) the same string with all of the A's capitalized.
 
-Once you have **DEFINED** the function you can then repeatedly **CALL** the function to use it over and over.
+With a partner, at the board, draw a model of one of the above functions.
 
-The function below will display the message `'Hi, everyone!'` to a console.
+### Function definition and function calls
+
+Once you have **DEFINED** a function you can then repeatedly **CALL** the function to use it over and over.
+
+The function below is defined to display the message `'Hi, everyone!'` to a console.
 
 ```javascript
     // function definition
@@ -80,7 +69,7 @@ The function below will display the message `'Hi, everyone!'` to a console.
     }
 ```
 
-The above code is called a *function definition*.  On its own, the function will not execute. The function definition is simply the recipe for "the spell."  The function will need to be *called* by an outside source to initialize and carry out its tasks. You need to "cast the spell" for it to have an impact on the context around it.  To call a function, type the function name and trailing parenthesis as a statement.
+The above code is called a *function definition*.  On its own, the function will not execute - nothing will happen. The function definition is simply the recipe for "the spell."  The function will need to be *called* by an outside source to initialize and carry out its tasks. You need to "cast the spell" for it to have an impact on the context around it.  To call a function, type the function name and trailing parenthesis as a statement.
 
 ```javascript
     // function call
@@ -90,7 +79,7 @@ The above code is called a *function definition*.  On its own, the function will
 When a function is *called*, the code from within the definition's curly braces (these -> **`{}`**) will be executed.  It will only be executed when the function is called.
 
 # Defining a function with a parameter
-When a function requires a parameter, it will use in input value to perform an action. In the function `greetPerson(name)` the function requires that a name value be given to it.  
+When a function requires a parameter, it will use an input value to perform an action. In the function `greetPerson(name)` the function requires that a name value be given to it.  
 
 ```javascript
     // function definition
@@ -146,7 +135,7 @@ The particular function above multiplies the input value by itself and *returns*
 
 ## Defining a function with multiple parameters
 
-Functions can take multiple paramters.  Each parameter must be separated from another by a comma.  
+Functions can take multiple parameters.  Each parameter must be separated from another by a comma.  
 
 ```javascript
    	// Add two integers
@@ -331,41 +320,6 @@ var doYouAgree = completelyDisagree(iAmRight);
 console.log(doYouAgree); // false
 ```
 
-
-Examples of functions:
-- input a cell phone number and output the name of state it's from.
-  function definition:
-  ```js
-    function cellNumberLocator(cellNumber){
-      var location;
-      // pick off the area code of the phone number given
-      // that is, find the first three digits of cellNumber
-      // refer to an API of area codes to find the related state
-      return location;
-    }
-  ```
-  function calls:
-  ```js
-    cellNumberLocator(5055882300);
-    var jennysHomeState = cellNumberLocator(2028675309);
-  ```
-- input a credit card number and output the name of the credit card company that it comes from.
-  function definition:
-  ```js
-    function determineCardCompany(creditCardNumber){
-      var cardCompany;
-      // take the first four digits of creditCardNumber;
-      // refer to a table that associates those four digits with card companies
-      // and store the company name using the variable cardCompany;
-      return cardCompany;
-    }
-  ```
-  function calls:
-  ```js
-    determineCardCompany(4321000011112222);
-    var myCardCompany = determineCardCompany(3400111122223333);
-  ```
-
 ## Function Scope
 A variable that is declared outside a function definition is a **global** variable, and its value is accessible and modifiable throughout your program. A variable that is declared inside a function definition is **local**.
 
@@ -378,7 +332,7 @@ var banana = 1;
 /* This function will change the global variable `banana` */
 function sliceBanana(slices){
     banana = slices;
-    return;
+    return banana;
 }
 
 sliceBanana(4);
@@ -404,66 +358,13 @@ console.log(mult);
 ```
 
 
-
-## The Call Stack
-
-We say that a function **takes in arguments** and **returns** something to us. You can imagine JavaScript control flow as a person talking on the phone with your program. When you call a function, it's like JS puts the main program on hold and contacts the function. If another function is called, JS puts the first function on hold to contact the new one. When the function finishes, JS returns to the previous call.
-
-To keep track of the functions JS has on hold, it uses a **call stack**. As JS calls a new function, it pushes the function onto the call stack. When a function returns, it pops that function off of the call stack.
-
-![](http://i.stack.imgur.com/4Z6xK.png)
-
-
-## Function Recursion
-
-Function recursion is the act of a function calling itself within its own code.  Traditionally, *recursive* functions require at least one parameter passed in.  Each time a function calls iself, the value of the parameter is changed to produce a desired effect.
-
-```javascript
-/* Display all numbers from num to 0 on the screen */
-function countDown(num){
-    /* Base Case */
-    if(num < 0){
-        return;
-    } else {
-
-        /* Action Steps */
-        console.log(num);
-        num = num - 1;
-
-        /* Recursive Steps */
-        countDown(num);     
-    }
-}
-
-countDown(10);
-=> 10 9 8 7 6 5 4 3 2 1 0
-```
-
-### What is this magic?!
-1.  The code above displays the current value of `num` to the screen then decrements the value by one.  
-2.  It then calls `countdown(num)` again. This time the value has been decremented.  
-3.  Notice that these statements are encapsulated inside an `if` statement.  This creates what is known as a *base case*.  
-4.  When `num` no longer satisfies the conditional statement `num >= 0`, (the variable reaches zero,) the function will no longer call itself and will end.
-5.  Pat yourself on the back.  This is not simple stuff!  
-
-
-![recursion](https://lh3.googleusercontent.com/-BOYdZI6tT7Y/UJwzRKYdQNI/AAAAAAAC5js/Ltg-gd6SCQQ/w506-h405/photo.jpg)
-
-*Recursion is your friend!*
-
-
-**Code Challenge:** Modify the above program to count down to zero, *then* count back up to the original value.
-
-
-
 ## Independent Practice
 Refine the skills covered in this workshop with these [Function Exercises](https://github.com/SF-WDI-LABS/functions-exercises)
 
 ## Closing Thoughts
-- review objectives & hierarchy of importance
-- look ahead & link to future workshops
-- clarify expectations and what developers should know by now
-- reiterate “the why” with a perspective of your intentions
+- You should now know the difference between defining and calling a function, you should be able to write functions that return values.
+- Soon, you'll learn more about JavaScript objects and how they relate to JS functions. You'll see that you can use *constructor functions* to generate objects.
+- You're going to be writing functions from here on out! Get used to thinking of them as nice containers of functionality that can be reused over and over.
 - create an active recall
 - Check for understanding
 
