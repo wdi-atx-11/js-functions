@@ -17,18 +17,18 @@ Functions are the building block of programs. They are the conceptual unit that 
 <!-- specific/measurable goal for students to achieve -->
 *After this workshop, developers will be able to:*
 
-- identify the differences between defining a function and calling (invoking) a function (casting the spell).
-- create a simple function that prints a value (for the user/developer to see a result) and a simple function that returns a value (for the rest of the code to use a result). Distinguish between the impact of these different results.
-- draw a model of a function that includes arguments as input, side effects, and return values as output.
-- explain the keyword `this` in the context of different scopes.
+- Identify the differences between defining a function and calling (invoking) a function (casting the spell).
+- Create a simple function that prints a value (for the user/developer to see a result) and a simple function that returns a value (for the rest of the code to use a result). Distinguish between the impact of these different results.
+- Draw a model of a function that includes arguments as input, side effects, and return values as output.
+- Explain the keyword `this` in the context of different scopes.
 
 ### Where should we be now?
 <!-- call out the skills that are prerequisites -->
 *Before this workshop, developers should already be able to:*
 
-- write their own JavaScript in a `.js` file and link that file to their HTML (with a `<script>` tag).
-- explain the concept *flow of control* and it's role in running a piece of code.
-- demonstrate understanding of string, number, and boolean data types in JavaScript.
+- Write their own JavaScript in a `.js` file and link that file to their HTML (with a `<script>` tag).
+- Explain the concept *flow of control* and it's role in running a piece of code.
+- Demonstrate understanding of string, number, and boolean data types in JavaScript.
 
 # What is a Function?
 
