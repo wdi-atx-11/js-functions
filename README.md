@@ -222,10 +222,7 @@ Functions may perform actions upon Strings as well.
     var exclamation = exclaim(phrase); // prints and returns the string 'Avast, ye mateys!'
 ```
 
-**Note:** When naming Javascript functions, it is best practice to
- use camelCase if multiple words are used in the title.
- This helps with readability, much like the case with
- variable and file naming conventions.
+**Note:** When naming Javascript functions, it is best practice to use [camelCase](https://en.wikipedia.org/wiki/CamelCase) if multiple words are used in the title. This helps with readability, much like the case with variable and file naming conventions.
 
 > **Bad Naming (doesn't follow convention):**
 >
