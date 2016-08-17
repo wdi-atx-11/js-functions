@@ -31,9 +31,6 @@ Functions are the building block of programs. They are the conceptual unit that 
 - demonstrate understanding of string, number, and boolean data types in JavaScript.
 
 # What is a Function?
-
-![image](https://cloud.githubusercontent.com/assets/6520345/17683207/d55e5fda-6305-11e6-93e2-fdd72a87f81a.png)
-
 A function can be thought of as a program within a larger program.  They often perform small or repetitive tasks.  
 
 ![Ice Cream Sandwich Machine](https://media.giphy.com/media/1kowbKFzLQqXu/giphy.gif)
@@ -54,6 +51,13 @@ A function can be thought of as a program within a larger program.  They often p
 - Accept a string (words, letters, or any type of text) as input and output (return) the same string with all of the A's capitalized.
 
 With a partner, at the board, draw a model of one of the above functions.
+
+
+
+<details>
+  <summary></summary>
+  <p>![image](https://cloud.githubusercontent.com/assets/6520345/17683207/d55e5fda-6305-11e6-93e2-fdd72a87f81a.png)</p>
+</details>
 
 ### Function definition and function calls
 
