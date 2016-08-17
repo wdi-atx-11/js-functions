@@ -17,18 +17,18 @@ Functions are the building block of programs. They are the conceptual unit that 
 <!-- specific/measurable goal for students to achieve -->
 *After this workshop, developers will be able to:*
 
-- Identify the differences between defining a function and calling (invoking) a function (casting the spell).
-- Create a simple function that prints a value (for the user/developer to see a result) and a simple function that returns a value (for the rest of the code to use a result). Distinguish between the impact of these different results.
-- Draw a model of a function that includes arguments as input, side effects, and return values as output.
-- Explain the keyword `this` in the context of different scopes.
+- identify the differences between defining a function and calling (invoking) a function (casting the spell).
+- create a simple function that prints a value (for the user/developer to see a result) and a simple function that returns a value (for the rest of the code to use a result). Distinguish between the impact of these different results.
+- draw a model of a function that includes arguments as input, side effects, and return values as output.
+- explain the keyword `this` in the context of different scopes.
 
 ### Where should we be now?
 <!-- call out the skills that are prerequisites -->
 *Before this workshop, developers should already be able to:*
 
-- Write their own JavaScript in a `.js` file and link that file to their HTML (with a `<script>` tag).
-- Explain the concept *flow of control* and it's role in running a piece of code.
-- Demonstrate understanding of string, number, and boolean data types in JavaScript.
+- write their own JavaScript in a `.js` file and link that file to their HTML (with a `<script>` tag).
+- explain the concept *flow of control* and it's role in running a piece of code.
+- demonstrate understanding of string, number, and boolean data types in JavaScript.
 
 # What is a Function?
 A function can be thought of as a program within a larger program.  They often perform small or repetitive tasks.  
@@ -50,12 +50,9 @@ A function can be thought of as a program within a larger program.  They often p
 - Accept credit card numbers as input and output (return) the credit card company that is associated with the card.
 - Accept a string (words, letters, or any type of text) as input and output (return) the same string with all of the A's capitalized.
 
-With a partner, at the board, draw a model of one of the above functions.
-
-
 
 <details>
-  <summary></summary>
+  <summary>With a partner, at the board, draw a model of one of the above functions.</summary>
   <p>![image](https://cloud.githubusercontent.com/assets/6520345/17683207/d55e5fda-6305-11e6-93e2-fdd72a87f81a.png)</p>
 </details>
 
@@ -145,16 +142,20 @@ Functions can take multiple parameters.  Each parameter must be separated from a
    	// Add two integers
     // function definition
     function sum(a, b) {
-        console.log(a + b);
+        return a + b;
     }
 
     var x = 6;
     var y = 2;
 
     // function calls
-    sum(x, y); // 8
-    sum(2, 3); // 5
-    sum(44, 33); // 77
+    var xPlusY = sum(x, y); // xPlusY will now hold the value 8
+    var sumWithNumbers = sum(2, 3); // sumWithNumbers will now hold the value 5
+    var bigSum = sum(44, 33); // bigSum will now hold the value 77
+
+    console.log(xPlusY) // will print 8 to the console
+    console.log(sumWithNumbers) // will print 5 to the console
+    console.log(bigSum) // will print 77 to the console
 ```
 
 ## Functions on Integers
@@ -226,7 +227,10 @@ Functions may perform actions upon Strings as well.
     var exclamation = exclaim(phrase); // prints and returns the string 'Avast, ye mateys!'
 ```
 
-**Note:** When naming Javascript functions, it is best practice to use [camelCase](https://en.wikipedia.org/wiki/CamelCase) if multiple words are used in the title. This helps with readability, much like the case with variable and file naming conventions.
+**Note:** When naming Javascript functions, it is best practice to
+ use camelCase if multiple words are used in the title.
+ This helps with readability, much like the case with
+ variable and file naming conventions.
 
 > **Bad Naming (doesn't follow convention):**
 >
