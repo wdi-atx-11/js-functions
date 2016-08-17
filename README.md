@@ -17,7 +17,7 @@ Functions are the building block of programs. They are the conceptual unit that 
 <!-- specific/measurable goal for students to achieve -->
 *After this workshop, developers will be able to:*
 
-- identify the differences between defining a function and calling a function (casting the spell).
+- identify the differences between defining a function and calling (invoking) a function (casting the spell).
 - create a simple function that prints a value (for the user/developer to see a result) and a simple function that returns a value (for the rest of the code to use a result). Distinguish between the impact of these different results.
 - draw a model of a function that includes arguments as input, side effects, and return values as output.
 - explain the keyword `this` in the context of different scopes.
@@ -69,7 +69,7 @@ The function below is defined to display the message `'Hi, everyone!'` to a cons
     }
 ```
 
-The above code is called a *function definition*.  On its own, the function will not execute - nothing will happen. The function definition is simply the recipe for "the spell."  The function will need to be *called* by an outside source to initialize and carry out its tasks. You need to "cast the spell" for it to have an impact on the context around it.  To call a function, type the function name and trailing parenthesis as a statement.
+The above code is called a *function definition*.  On its own, the function will not execute - nothing will happen. The function definition is simply the recipe for "the spell."  The function will need to be *called* (invoked) by an outside source to initialize and carry out its tasks. You need to "cast the spell" for it to have an impact on the context around it.  To call a function, type the function name and trailing parenthesis as a statement.
 
 ```javascript
     // function call
@@ -194,7 +194,7 @@ Functions may perform actions upon Strings as well.
 
     var phrase = 'i am mighty.'
     // function call
-    shout(phrase); // I AM MIGHTY.
+    shout(phrase); // the console will display  "I AM MIGHTY."
 ```
 ```javascript
     // convert String to lowercase
@@ -202,11 +202,10 @@ Functions may perform actions upon Strings as well.
     // function definition
     function whisper(phrase) {
         console.log(phrase.toLowerCase());
-        return phrase.toLowerCase();
     }
 
     //function call
-    whisper('I AM SMALL'); // prints and returns the string 'i am small'
+    whisper('I AM SMALL'); // the console will display the string 'i am small'
 ```
 
 ```javascript
@@ -215,12 +214,12 @@ Functions may perform actions upon Strings as well.
     //function definition
     function exclaim(phrase) {
         console.log(phrase + '!');
-        return phrase;
+        return phrase + '!';
     }
 
     var phrase = 'Avast, ye mateys';
     // function call
-    exclaim(phrase); // prints and returns the string 'Avast, ye mateys!'
+    var exclamation = exclaim(phrase); // prints and returns the string 'Avast, ye mateys!'
 ```
 
 **Note:** When naming Javascript functions, it is best practice to
@@ -243,7 +242,7 @@ Functions may perform actions upon Strings as well.
 ```javascript
     // convert spaces to dashes in a phrase
 
-    // function definition
+    // function definition with good naming
     function spacesToDashes(phrase) {
         console.log(phrase.replace(/ /g, "-"));
         return phrase.replace(/ /g, "-");
@@ -251,7 +250,7 @@ Functions may perform actions upon Strings as well.
 
     var phrase = "Dash is also a great API lookup tool!";
     // function call
-    spacesToDashes(phrase); // prints and returns 'Dash-is-also-a-great-API-lookup-tool!'
+    var dashedPhrase = spacesToDashes(phrase); // prints and returns 'Dash-is-also-a-great-API-lookup-tool!'
 ```
 
 In the case of the function spacesToDashes, the name describes the function and is in lowerCamelCase (first word not capitalized, other words capitalized with no spaces).
@@ -332,13 +331,10 @@ var banana = 1;
 /* This function will change the global variable `banana` */
 function sliceBanana(slices){
     banana = slices;
-    return banana;
 }
 
 sliceBanana(4);
-console.log(banana) ;
-=> 4
-=> undefined
+console.log(banana); // will display 4 in the console
 ```
 
 ```javascript
@@ -357,16 +353,41 @@ console.log(mult);
 => Uncaught ReferenceError: mult is not defined!!! So Bad!!!!
 ```
 
+## The keyword `this`
+
+`this` is a very common word in english with a somewhat vague meaning. In javascript, `this` is a common and important concept related to scope, but distinct from it. As [Ryan Morr mentions in this blog post](http://ryanmorr.com/understanding-scope-and-context-in-javascript/):
+
+>Every function invocation has both a scope and a context associated with it. Fundamentally, scope is function-based while context is object-based. In other words, scope pertains to the variable access of a function when it is invoked and is unique to each invocation. Context is always the value of the `this` keyword which is a reference to the object that “owns” the currently executing code.
+
+In most of the functions we'll be writing early on, the object that "owns" the currently executing code will be the `Window` object.
+
+![image](https://cloud.githubusercontent.com/assets/6520345/17747683/bd2a0264-646a-11e6-9d73-846f68642379.png)
+
+
+Later on, we'll learn how to build our own objects that contain their own functions called *methods*. In those cases, `this` will refer to the object that "owns" those functions.
+
+```javascript
+// below, this refers to the shape object so you can access its properties
+var shape = {
+  width: 12,
+  height: 400,
+  getArea: function(){
+    return this.width * this.height;
+  }
+}
+
+```
+
 
 ## Independent Practice
-Refine the skills covered in this workshop with these [Function Exercises](https://github.com/SF-WDI-LABS/functions-exercises)
+Refine the skills covered in this workshop with some [Function Training](https://github.com/sf-wdi-31/functions-training)
 
 ## Closing Thoughts
 - You should now know the difference between defining and calling a function, you should be able to write functions that return values.
 - Soon, you'll learn more about JavaScript objects and how they relate to JS functions. You'll see that you can use *constructor functions* to generate objects.
 - You're going to be writing functions from here on out! Get used to thinking of them as nice containers of functionality that can be reused over and over.
-- create an active recall
-- Check for understanding
 
 ## Additional Resources
-- [External Resource](#)
+- [Eloquent JavaScript's Functions chapter](http://eloquentjavascript.net/03_functions.html)
+- [MDN's introduction to functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript#Functions)
+- [Details about scope, context, and `this`](http://ryanmorr.com/understanding-scope-and-context-in-javascript/)
