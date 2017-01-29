@@ -17,21 +17,21 @@ Functions are the building block of programs. They are the conceptual unit that 
 <!-- specific/measurable goal for students to achieve -->
 *After this workshop, developers will be able to:*
 
-- identify the differences between defining a function and calling (invoking) a function (casting the spell).
-- create a simple function that prints a value (for the user/developer to see a result) and a simple function that returns a value (for the rest of the code to use a result). Distinguish between the impact of these different results.
-- draw a model of a function that includes arguments as input, side effects, and return values as output.
-- explain the keyword `this` in the context of different scopes.
+- Identify the differences between defining a function and calling (invoking) a function.
+- Distinguish between printing a result and returning a result.
+- Draw a model of a function that includes arguments as input, side effects, and return values as output.
+- Explain the keyword `this` in the context of different scopes.
 
 ### Where should we be now?
 <!-- call out the skills that are prerequisites -->
 *Before this workshop, developers should already be able to:*
 
 - write their own JavaScript in a `.js` file and link that file to their HTML (with a `<script>` tag).
-- explain the concept *flow of control* and it's role in running a piece of code.
+- explain the concept *flow of control* and its role in running a piece of code.
 - demonstrate understanding of string, number, and boolean data types in JavaScript.
 
 # What is a Function?
-A function can be thought of as a program within a larger program.  They often perform small or repetitive tasks.  
+A function is a named piece of code. A function can be thought of as a program within a larger program.  They often perform small or repetitive tasks.  
 
 ![Ice Cream Sandwich Machine](https://media.giphy.com/media/1kowbKFzLQqXu/giphy.gif)
 
@@ -44,7 +44,7 @@ A function can be thought of as a program within a larger program.  They often p
 - **Code Reuse** - "Don't Repeat Yourself" (DRY) is a principle of coding - keep your programs DRY! Reusing code makes it easier to change how your program works, since you only have to make updates in one place. If you find yourself writing the same code two or more times, a good rule of thumb is to move it into a function!
 
 
-### Examples of functions:
+### Examples of function descriptions:
 
 - Accept cell phone numbers as input and output (return) the state that phone number comes from.
 - Accept credit card numbers as input and output (return) the credit card company that is associated with the card.
@@ -56,7 +56,7 @@ A function can be thought of as a program within a larger program.  They often p
   <p>![image](https://cloud.githubusercontent.com/assets/6520345/17683207/d55e5fda-6305-11e6-93e2-fdd72a87f81a.png)</p>
 </details>
 
-### Function definition and function calls
+# Function definition and function calls
 
 Once you have **DEFINED** a function you can then repeatedly **CALL** the function to use it over and over.
 
@@ -79,8 +79,10 @@ The above code is called a *function definition*.  On its own, the function will
 
 When a function is *called*, the code from within the definition's curly braces (these -> **`{}`**) will be executed.  It will only be executed when the function is called.
 
+We already call functions all the time in our code, even if we didn't write them. Those functions are defined elsewhere, either in the specification of Javascript, or within the specific framework (like using the `$` function for jQuery). The new power we have to define our own functions means we can write our own chunks of code that we want to execute later.
+
 # Defining a function with a parameter
-When a function requires a parameter, it will use an input value to perform an action. In the function `greetPerson(name)` the function requires that a name value be given to it.  
+When a function requires a parameter, it will use an input value to perform an action. In the function `greetPerson(name)` the function requires that a name value be given to it.
 
 ```javascript
     // function definition
@@ -115,7 +117,7 @@ Functions can take variables as parameters or Strings
     greetPerson('Will'); // The console will print the string 'Hello Will'
 ```
 
-## Functions with Return Values
+# Return Values and Void vs. Fruitful Functions
 The above functions use `console.log()` to display a message to the screen. `console.log()` is a function for *giving information to the developer* - it shows evidence that something has happened wherever the developer wants to see evidence.
 
 Functions also have the ability to *give information to the code* for later use. To do this, we use `return` statements.
@@ -133,6 +135,25 @@ Functions also have the ability to *give information to the code* for later use.
     console.log(mySquaredValue); // 64
 ```
 The particular function above multiplies the input value by itself and *returns* (gives) the resulting product to the line where it was called.  The variable `mySquaredValue` now stores the *return* value that the function call `square(8)` output. In this case, the `=` sign is called *assignment*. It assigns a value (whatever value is returned from `square(8)`) to a variable name, `mySquaredValue`. We can then use `mySquaredValue` to refer to that value anywhere in the code instead of needing to call the function over and over again. This is nice, because eventually we'll write much longer functions that we won't want to execute over and over again for fear of eating up processing power.
+
+When thinking about functions, we can broadly separate them into two types: *void* functions, which do not return anything, and *fruitful* functions, which do return something. When thinking about how we will write a function, figuring out whether it is void or fruitful is an important step.
+
+**If the code you are writing has an "answer", then you should `return` that answer, NOT print it out with `console.log`.**
+
+In general, `console.log` is a function you only need to use in two situations: when you're trying to debug something, or when the description of a function *specifically* asks you to print something to the console.
+
+###Practice
+Work in partners & whiteboard to fill in this table.
+
+|Function description|Void or fruitful?|Parameters & types|Return type|
+|---|---|---|---|
+|Capitalize the first letter of a string| | | |
+|Print a countdown from 10 to 0| | | |
+|Move Kyrel one square right| | | |
+|Multiply two numbers together| | | |
+|Put a string into the DOM element with the id "potato"| | | |
+|Find the nth prime number| | | |
+
 
 ## Defining a function with multiple parameters
 
@@ -162,21 +183,18 @@ Functions can take multiple parameters.  Each parameter must be separated from a
 ```javascript
     // Subtract two integers
     function subtract(a, b) {
-        console.log(a - b);
         return a - b;
     }
 ```
 ``` javascript  
     // Multiply two integers
     function multiply(a, b) {
-        console.log(a  *  b);
         return a * b;
     }
 ```
 ```javascript
     // Divide two integers
     function divide(a, b) {
-        console.log(a / b);
         return a / b;
     }
 ```
@@ -190,10 +208,10 @@ But what if you want to perform functions on numbers that aren't integers?!  Don
 Functions may perform actions upon Strings as well.
 
 ```javascript
-    // convert String to uppercase
+    // print uppercase version of string
 
     // function definition
-    function shout(phrase) {
+    function shoutToConsole(phrase) {
         console.log(phrase.toUpperCase());
     }
 
@@ -202,10 +220,10 @@ Functions may perform actions upon Strings as well.
     shout(phrase); // the console will display  "I AM MIGHTY."
 ```
 ```javascript
-    // convert String to lowercase
+    // print lowercase version of string
 
     // function definition
-    function whisper(phrase) {
+    function whisperToConsole(phrase) {
         console.log(phrase.toLowerCase());
     }
 
@@ -214,17 +232,17 @@ Functions may perform actions upon Strings as well.
 ```
 
 ```javascript
-    // append an exclamation point to the end of a phrase
+    // append an exclamation point to the end of a string
 
     //function definition
     function exclaim(phrase) {
-        console.log(phrase + '!');
         return phrase + '!';
     }
 
     var phrase = 'Avast, ye mateys';
     // function call
-    var exclamation = exclaim(phrase); // prints and returns the string 'Avast, ye mateys!'
+    var exclamation = exclaim(phrase); // returns the string 'Avast, ye mateys!'
+    console.log(exclamation); // after it is returned, we can print it
 ```
 
 **Note:** When naming Javascript functions, it is best practice to
@@ -249,13 +267,13 @@ Functions may perform actions upon Strings as well.
 
     // function definition with good naming
     function spacesToDashes(phrase) {
-        console.log(phrase.replace(/ /g, "-"));
         return phrase.replace(/ /g, "-");
     }
 
     var phrase = "Dash is also a great API lookup tool!";
     // function call
-    var dashedPhrase = spacesToDashes(phrase); // prints and returns 'Dash-is-also-a-great-API-lookup-tool!'
+    var dashedPhrase = spacesToDashes(phrase); //returns 'Dash-is-also-a-great-API-lookup-tool!'
+    console.log(dashedPhrase);
 ```
 
 In the case of the function spacesToDashes, the name describes the function and is in lowerCamelCase (first word not capitalized, other words capitalized with no spaces).
@@ -303,7 +321,7 @@ var number = 3;
 var result = isGreaterThanFive(number);
 console.log(result); // false;
 ```
-The above function has two return statements.  Since both are within an `if / else ` statement, only one will apply to the condition.  Once a return statement is executed the function ends.  This ensures that only one return statement can be executed per function.  
+The above function has two return statements.  Since both are within an `if / else ` statement, only one will apply to the condition.  **Once a return statement is executed, the function ends.**  This ensures that only one return statement can be executed per function.  
 
 *A function may have multiple possible return statements but only one may be executed at any one given function call.*
 
@@ -324,7 +342,7 @@ var doYouAgree = completelyDisagree(iAmRight);
 console.log(doYouAgree); // false
 ```
 
-## Function Scope
+# Function Scope
 A variable that is declared outside a function definition is a **global** variable, and its value is accessible and modifiable throughout your program. A variable that is declared inside a function definition is **local**.
 
 Functions can access and modify global variables at will.  A program cannot access a function's local variable, however.  By nature, variables declared and defined within a function are created and destroyed as soon as the function starts and stops.  The local variable's data would be impossible to depend on from a source outside of the function.  
@@ -385,9 +403,9 @@ var shape = {
 
 
 ## Independent Practice
-Refine the skills covered in this workshop with some [Function Training](https://github.com/sf-wdi-31/functions-training)
+Refine the skills covered in this workshop with some [Function Training](https://github.com/SF-WDI-LABS/functions-training)
 
-## Closing Thoughts
+# Closing Thoughts
 - You should now know the difference between defining and calling a function, you should be able to write functions that return values.
 - Soon, you'll learn more about JavaScript objects and how they relate to JS functions. You'll see that you can use *constructor functions* to generate objects.
 - You're going to be writing functions from here on out! Get used to thinking of them as nice containers of functionality that can be reused over and over.
