@@ -153,6 +153,9 @@ Work in partners & whiteboard to fill in this table.
 |Multiply two numbers together| | | |
 |Put a string into the DOM element with the id "potato"| | | |
 |Find the nth prime number| | | |
+|Roll a 6-sided die| | | |
+|Roll a die with n sides| | | |
+
 
 
 ## Defining a function with multiple parameters
