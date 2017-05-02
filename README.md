@@ -53,7 +53,7 @@ A function is a named piece of code. A function can be thought of as a program w
 
 <details>
   <summary>With a partner, at the board, draw a model of one of the above functions.</summary>
-  <p>![image](https://cloud.githubusercontent.com/assets/6520345/17683207/d55e5fda-6305-11e6-93e2-fdd72a87f81a.png)</p>
+  <p><img src="https://cloud.githubusercontent.com/assets/6520345/17683207/d55e5fda-6305-11e6-93e2-fdd72a87f81a.png"></p>
 </details>
 
 # Function definition and function calls
@@ -142,7 +142,7 @@ When thinking about functions, we can broadly separate them into two types: *voi
 
 In general, `console.log` is a function you only need to use in two situations: when you're trying to debug something, or when the description of a function *specifically* asks you to print something to the console.
 
-###Practice
+### Practice
 Work in partners & whiteboard to fill in this table.
 
 |Function description|Void or fruitful?|Parameters & types|Return type|
@@ -283,7 +283,7 @@ In the case of the function spacesToDashes, the name describes the function and 
 
 
 
-##Functions on Booleans
+## Functions on Booleans
 Functions are able to receive and return boolean values.  Functions that return boolean values are commonly used to check the states of variables and whether conditions are met.
 
 > **Note:** It is best practice to name functions with boolean return values with a prefix of 'is', 'has', or 'can.'
